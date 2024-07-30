@@ -1,0 +1,20 @@
+<h1 class="text-center text-primary mt-2">USER DETAILS</h1>
+<div class="w-100 h-100 d-flex justify-content-center align-items-center mt-2" >
+
+  <div class="details row d-flex flex-column align-items-center mt-5  p-4">
+      <div class="col-6 d-flex justify-content-center">
+          <img [src]="user.avatar" class="rounded-circle border border-3 border-white" alt="" appZoomIn>
+      </div>
+      <div class="col-6 d-flex flex-column align-items-center mt-4">
+          <h5 class="card-title text-white mb-4"><span class="fw-bold text-black">Name:</span>{{" "+user.first_name+" "+user.last_name}}</h5>
+          <h5 class="card-text text-white"><span class="fw-bold text-black">Email:</span>{{" "+user.email}}</h5>
+          <h1 class="text-start" [routerLink]="['/']">
+            <h4 class="btn fs-5 btn-dark p-2"><i class="bi bi-arrow-left-circle-fill text-white fs-5" ></i> Back</h4>
+
+          </h1>
+      </div>
+
+  </div>
+  <app-loader *ngIf="loader"></app-loader>
+</div>
+

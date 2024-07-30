@@ -1,0 +1,14 @@
+.row{
+    max-width: 100%;
+}
+.details img{
+  width: 150px;
+  height: 150px;
+}
+.details{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  width: 60%;
+  height: 70%;
+  background-color: rgb(93, 150, 150);
+}

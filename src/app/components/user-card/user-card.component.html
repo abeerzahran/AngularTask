@@ -1,12 +1,14 @@
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
+<div class="card mb-3 border border-3 border-primary" [routerLink]="['/users/',user.id]"  style="max-width: 540px;" appZoomIn>
+  <div class="row h-100">
     <div class="col-md-4">
-      <img [src]="user.avatar" class="img-fluid rounded-start" alt="...">
+      <div class="overflow-hidden h-100 w-100">
+        <img [src]="user.avatar" class="img-fluid card-img h-100 w-100" alt="..." >
+      </div>
     </div>
     <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><span class="fw-bold">Name:</span>{{user.first_name+" "+user.last_name}}</h5>
-        <p class="card-text"><span class="fw-bold">Email:</span>{{user.email}}</p>
+      <div class="card-body text-start">
+        <h6 class="card-text text-primary"><span class="fw-bold text-black">Name:</span>{{" "+user.first_name+" "+user.last_name}}</h6>
+        <h6 class="card-text text-primary"><span class="fw-bold text-black">Email:</span>{{" "+user.email}}</h6>
       </div>
     </div>
   </div>

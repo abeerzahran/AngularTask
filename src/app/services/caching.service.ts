@@ -15,6 +15,8 @@ export class CachingService {
   set(key:string,value:any){
     const expiry = Date.now()+ this.cacheDuration
     this.cache.set(key,{value,expiry})
+    console.log(this.cache);
+
   }
 
   get(key:string){
@@ -24,8 +26,12 @@ export class CachingService {
       if(Date.now()> value.expiry)
       {
         this.cache.delete(key)
+        console.log("deleteCache");
+
       }
       else{
+        console.log("returned from cache");
+
         return value.value;
       }
     }
