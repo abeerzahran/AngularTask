@@ -3,7 +3,16 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
+import { cacheInterceptorInterceptor } from './Interceptors/cache-interceptor.interceptor';
+import { CachingService } from './services/caching.service';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+  providers: [
+    provideRouter(routes),
+    provideClientHydration(),
+    provideHttpClient(),
+    CachingService,
+    // { provide: HTTP_INTERCEPTORS, useClass: cacheInterceptorInterceptor, multi: true }
+  ]
 };
