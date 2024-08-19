@@ -38,7 +38,10 @@ export class HeaderComponent implements OnInit {
             }
           console.log(this.dataShareService.pagesArray());
           this.loader=false
-        }
+        },
+        error:(err) =>{
+
+        },
       })
     }
     else{
@@ -52,7 +55,11 @@ export class HeaderComponent implements OnInit {
           this.dataShareService.pagesArray.set([1])
           console.log(this.dataShareService.pagesArray());
           this.loader=false
-        }
+        },
+        error:(err)=> {
+          this.dataShareService.usersPage().data=[]
+
+        },
       })
     }
   }

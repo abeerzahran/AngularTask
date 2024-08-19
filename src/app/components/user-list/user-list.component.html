@@ -1,25 +1,36 @@
 <h1 class="text-center text-primary mt-5">USERS</h1>
-<div class="users d-flex flex-row flex-wrap justify-content-center justify-content-around mt-5">
-  @for (item of usersPage().data; track $index) {
-    <app-user-card  [user]="item"></app-user-card>
-  }
-</div>
-<div class="pagination justify-content-center">
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" (click)="prevPage()" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li *ngFor="let num of pagesArray(); let i=index" class="page-item"><a class="page-link" (click)="getPage(num)">{{num}}</a></li>
-      <li class="page-item">
-        <a class="page-link" (click)="nextPage()" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
 
-</div>
+  @if (usersPage().data.length==0) {
+    <div class="d-flex flex-row justify-content-center" >
+      <img class="notFound" src="../../../assets/images/no-user-found.jpg" alt="..." srcset="">
+    </div>
+  }
+  @else{
+    <div class="users d-flex flex-row flex-wrap justify-content-center justify-content-around mt-5">
+
+      @for (item of usersPage().data; track $index) {
+        <app-user-card  [user]="item"></app-user-card>
+      }
+    </div>
+    <div class="pagination justify-content-center">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" (click)="prevPage()" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li *ngFor="let num of pagesArray(); let i=index" class="page-item"><a class="page-link" (click)="getPage(num)">{{num}}</a></li>
+          <li class="page-item">
+            <a class="page-link" (click)="nextPage()" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  }
+
+
 <app-loader *ngIf="loader"></app-loader>

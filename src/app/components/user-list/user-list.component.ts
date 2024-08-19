@@ -39,6 +39,8 @@ export class UserListComponent implements OnInit {
           this.dataShareService.loader.set(false)
       }
     })
+    console.log(this.usersPage().data);
+
   }
 
   getPage(num:number){

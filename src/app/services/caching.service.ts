@@ -19,7 +19,7 @@ export class CachingService {
 
   }
 
-  get(key:string){
+  public get(key:string){
     const value = this.cache.get(key);
     if(value)
     {

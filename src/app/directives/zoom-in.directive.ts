@@ -10,7 +10,7 @@ export class ZoomInDirective {
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.elementRef.nativeElement.style.transform = 'scale(1.2)';
+    this.elementRef.nativeElement.style.transform = 'scale(1.1)';
     this.elementRef.nativeElement.style.transition = 'transform 0.3s ease-in-out';
   }
 
